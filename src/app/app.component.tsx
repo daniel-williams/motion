@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 
+import { Fly } from './components/fly/fly.component'
 import * as styles from './app.component.scss';
 
 interface appProps {}
@@ -41,11 +42,13 @@ export class App extends React.Component<appProps, appState> {
         <div className={styles.app}>
           <ul className={styles.menu}>
             <li><Link to='/'>home</Link></li>
+            <li><Link to='/fly'>fly</Link></li>
             <li><Link to='/next'>next</Link></li>
           </ul>
           <div ref={x => this.outlet = x} className={styles.routerOutlet}>
             <Switch>
               <Route exact path='/' render={() => <div>home</div>} />
+              <Route path='/fly' component={() => <Fly width={outletWidth} height={outletHeight}></Fly>} />
               <Route path='/next' render={() => <div>next</div>} />
             </Switch>
           </div>
