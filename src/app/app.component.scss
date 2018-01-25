@@ -22,7 +22,7 @@ html {
     display: flex;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 30px;
     max-height: 100px;
 
     > li {
@@ -42,6 +42,7 @@ html {
 
   .routerOutlet {
     position: relative;
+    padding: 30px;
     flex-grow: 100;
   }
 }
